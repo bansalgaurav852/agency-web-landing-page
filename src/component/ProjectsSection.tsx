@@ -1,27 +1,27 @@
-// src/components/Portfolio.js
+import { motion } from 'framer-motion';
+import React from 'react';
 
-
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
     const portfolioItems = [
         {
             image: '/projects-image/p1.png',
             title: 'Digital Marketing Agency Website',
-            description: 'This is a website for a client who wants to achieve their goals and meet their users\' needs while also increasing their reach across all platforms. This is a website rebrand.',
+            description: "This is a website for a client who wants to achieve their goals and meet their users' needs while also increasing their reach across all platforms. This is a website rebrand.",
         },
         {
             image: '/projects-image/p2.png',
             title: 'Digital Marketing Agency Website',
-            description: 'This is a website for a client who wants to achieve their goals and meet their users\' needs while also increasing their reach across all platforms. This is a website rebrand.',
+            description: "This is a website for a client who wants to achieve their goals and meet their users' needs while also increasing their reach across all platforms. This is a website rebrand.",
         },
         {
             image: '/projects-image/p3.png',
             title: 'Digital Marketing Agency Website',
-            description: 'This is a website for a client who wants to achieve their goals and meet their users\' needs while also increasing their reach across all platforms. This is a website rebrand.',
+            description: "This is a website for a client who wants to achieve their goals and meet their users' needs while also increasing their reach across all platforms. This is a website rebrand.",
         },
         {
             image: '/projects-image/p4.png',
             title: 'Digital Marketing Agency Website',
-            description: 'This is a website for a client who wants to achieve their goals and meet their users\' needs while also increasing their reach across all platforms. This is a website rebrand.',
+            description: "This is a website for a client who wants to achieve their goals and meet their users' needs while also increasing their reach across all platforms. This is a website rebrand.",
         },
     ];
 
@@ -34,7 +34,17 @@ const Portfolio = () => {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {portfolioItems.map((item, index) => (
-                        <div key={index} className="space-y-4">
+                        <motion.div
+                            key={index}
+                            className="space-y-4"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                delay: index * 0.2,
+                                ease: 'easeOut',
+                            }}
+                        >
                             <img
                                 src={item.image}
                                 alt={item.title}
@@ -42,7 +52,7 @@ const Portfolio = () => {
                             />
                             <h4 className="text-xl font-semibold">{item.title}</h4>
                             <p className="text-gray-600">{item.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>

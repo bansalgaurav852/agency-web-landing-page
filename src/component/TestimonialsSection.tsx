@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
@@ -32,7 +32,7 @@ const testimonials = [
     },
 ];
 
-export default function TestimonialSlider() {
+const TestimonialSlider: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // Determine the number of items per slide based on screen size
@@ -115,3 +115,6 @@ export default function TestimonialSlider() {
         </section>
     );
 }
+
+
+export default TestimonialSlider;

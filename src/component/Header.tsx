@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FaChevronDown, FaBars, FaTimes } from "react-icons/fa"; // Import the cancel icon
 import CustomButton from './CustomButton';
 
-function HeaderWithDropdown() {
+const HeaderWithDropdown: React.FC = () => {
     const [isDropdownVisible, setDropdownVisible] = useState(false);
     const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
